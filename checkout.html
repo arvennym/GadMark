@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sepeti Tamamla | GadMarket</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="top-bar">
+    <div>📞 +90 551 475 39 38</div>
+    <div>Antalya gadget mağazası | Güvenli sipariş</div>
+    <div>📍 Antalya, Türkiye</div>
+  </div>
+
+  <header class="main-header">
+    <a href="index.html" class="logo">
+      <div class="logo-icon">🛍️</div>
+      <span>GadMarket</span>
+    </a>
+
+    <div class="search-area">
+      <input type="text" placeholder="Ürün ara..." disabled>
+      <button>🔍 Search</button>
+    </div>
+
+    <div class="header-icons">
+      <button title="Favoriler">♡</button>
+      <button onclick="toggleCart()" title="Sepet">🛒 <span id="cart-count">0</span></button>
+      <button title="Hesap">👤</button>
+      <button class="menu-toggle" onclick="toggleMobileMenu()">☰</button>
+    </div>
+  </header>
+
+  <nav class="nav-menu">
+    <button class="category-btn">☰ All Category</button>
+    <a href="index.html">Home</a>
+    <a href="index.html#products">Shop</a>
+    <a href="payment.html">Ödeme</a>
+    <a href="delivery.html">Teslimat</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu-header">
+      <h2>GadMarket</h2>
+      <button onclick="toggleMobileMenu()">×</button>
+    </div>
+
+    <a href="index.html">Home</a>
+    <a href="index.html#products">Shop</a>
+    <a href="product.html">iPhone 17 Pro Max</a>
+    <a href="payment.html">Ödeme</a>
+    <a href="delivery.html">Teslimat</a>
+    <a href="pickup.html">Mağazadan Teslim</a>
+    <a href="service.html">Servis Merkezi</a>
+    <a href="expertise.html">Ekspertiz</a>
+    <a href="warranty.html">Garanti</a>
+    <a href="contact.html">İletişim</a>
+    <a href="privacy.html">Gizlilik Politikası</a>
+    <a href="agreement.html">Kullanıcı Sözleşmesi</a>
+  </div>
+
+  <div class="overlay" id="overlay" onclick="toggleMobileMenu()"></div>
+
+  <main class="container checkout-page">
+    <h1>Sepeti Tamamla</h1>
+
+    <div class="checkout-layout">
+
+      <section class="checkout-form-box">
+        <h2>Müşteri Bilgileri</h2>
+
+        <form id="checkoutForm">
+          <label>Ad Soyad</label>
+          <input type="text" id="customerName" placeholder="Adınız ve soyadınız" required>
+
+          <label>Telefon</label>
+          <input type="tel" id="customerPhone" placeholder="+90..." required>
+
+          <label>E-posta</label>
+          <input type="email" id="customerEmail" placeholder="E-posta adresiniz">
+
+          <label>Teslimat Yöntemi</label>
+          <select id="deliveryMethod" required>
+            <option value="">Seçiniz</option>
+            <option value="Antalya içi teslimat">Antalya içi teslimat</option>
+            <option value="Mağazadan teslim">Mağazadan teslim</option>
+            <option value="Kargo">Kargo</option>
+          </select>
+
+          <label>Ödeme Yöntemi</label>
+          <select id="paymentMethod" required>
+            <option value="">Seçiniz</option>
+            <option value="Kapıda ödeme">Kapıda ödeme</option>
+            <option value="Havale / EFT">Havale / EFT</option>
+            <option value="Mağazada ödeme">Mağazada ödeme</option>
+          </select>
+
+          <label>Adres</label>
+          <textarea id="customerAddress" placeholder="Teslimat adresiniz"></textarea>
+
+          <label>Sipariş Notu</label>
+          <textarea id="customerNote" placeholder="Eklemek istediğiniz not"></textarea>
+
+          <button type="submit" class="order-btn">WhatsApp ile Siparişi Gönder</button>
+        </form>
+      </section>
+
+      <section class="order-summary">
+        <h2>Sipariş Özeti</h2>
+
+        <div id="checkoutItems"></div>
+
+        <div class="coupon-box">
+          <input type="text" id="couponInput" placeholder="Promokod girin">
+          <button onclick="applyCoupon()" type="button">Uygula</button>
+        </div>
+
+        <div class="summary-line">
+          <span>Ara Toplam:</span>
+          <strong>₺<span id="checkoutSubtotal">0</span></strong>
+        </div>
+
+        <div class="summary-line">
+          <span>İndirim:</span>
+          <strong>₺<span id="checkoutDiscount">0</span></strong>
+        </div>
+
+        <div class="summary-line total-line">
+          <span>Toplam:</span>
+          <strong>₺<span id="checkoutTotal">0</span></strong>
+        </div>
+
+        <p class="coupon-info">Promokod: <b>GAD10</b> = %10 indirim</p>
+      </section>
+
+    </div>
+  </main>
+
+  <div class="cart-panel" id="cartPanel">
+    <div class="cart-header">
+      <h2>Sepetim</h2>
+      <button onclick="toggleCart()">×</button>
+    </div>
+
+    <div id="cartItems"></div>
+
+    <div class="cart-total">
+      <h3>Toplam: ₺<span id="totalPrice">0</span></h3>
+    </div>
+
+    <button class="checkout" onclick="checkout()">Ödemeye Geç</button>
+    <button class="close" onclick="toggleCart()">Kapat</button>
+  </div>
+
+  <a class="whatsapp" href="https://wa.me/905514753938" target="_blank">WhatsApp</a>
+
+  <footer>
+    <div class="footer-bottom">© 2026 GadMarket Antalya. Tüm hakları saklıdır.</div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html> 

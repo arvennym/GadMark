@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>iPhone 17 Pro Max | GadMarket</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="top-bar">
+    <div>📞 +90 551 475 39 38</div>
+    <div>Antalya gadget mağazası | Telefon, saat ve elektronik ürünler</div>
+    <div>📍 Antalya, Türkiye</div>
+  </div>
+
+  <header class="main-header">
+    <a href="index.html" class="logo">
+      <div class="logo-icon">🛍️</div>
+      <span>GadMarket</span>
+    </a>
+
+    <div class="search-area">
+      <input type="text" placeholder="Ürün ara...">
+      <button>🔍 Search</button>
+    </div>
+
+    <div class="header-icons">
+  <button title="Favoriler">♡</button>
+  <button onclick="toggleCart()" title="Sepet">🛒 <span id="cart-count">0</span></button>
+  <button title="Hesap">👤</button>
+  <button class="menu-toggle" onclick="toggleMobileMenu()">☰</button>
+    </div>
+  </header>
+
+  <nav class="nav-menu">
+    <button class="category-btn">☰ All Category</button>
+    <a href="index.html">Home</a>
+    <a href="index.html#about">About</a>
+    <a href="index.html#products">Shop</a>
+    <a href="payment.html">Ödeme</a>
+    <a href="delivery.html">Teslimat</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+  
+  <div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu-header">
+    <h2>GadMarket</h2>
+    <button onclick="toggleMobileMenu()">×</button>
+  </div>
+
+  <a href="index.html">Home</a>
+  <a href="index.html#products">Shop</a>
+  <a href="product.html">iPhone 17 Pro Max</a>
+  <a href="payment.html">Ödeme</a>
+  <a href="delivery.html">Teslimat</a>
+  <a href="pickup.html">Mağazadan Teslim</a>
+  <a href="service.html">Servis Merkezi</a>
+  <a href="expertise.html">Ekspertiz</a>
+  <a href="warranty.html">Garanti</a>
+  <a href="contact.html">İletişim</a>
+  <a href="privacy.html">Gizlilik Politikası</a>
+  <a href="agreement.html">Kullanıcı Sözleşmesi</a>
+</div>
+
+<div class="overlay" id="overlay" onclick="toggleMobileMenu()"></div>
+
+  <main class="container">
+
+    <section class="product-detail">
+      <div class="detail-image">
+        <img src="images/iphone17.png" alt="iPhone 17 Pro Max">
+      </div>
+
+      <div class="detail-info">
+        <span class="stock">Stokta var</span>
+        <h1>iPhone 17 Pro Max</h1>
+
+        <p>
+          iPhone 17 Pro Max, büyük ekranı, güçlü A19 Pro işlemcisi ve gelişmiş kamera sistemiyle
+          profesyonel kullanım için tasarlanmış premium bir akıllı telefondur.
+        </p>
+
+        <div class="detail-price">₺139.990</div>
+
+        <div class="quantity-box">
+          <button onclick="decreaseQuantity()">-</button>
+          <span id="quantity">1</span>
+          <button onclick="increaseQuantity()">+</button>
+        </div>
+
+        <div class="detail-buttons">
+          <button onclick="addToCartWithQuantity('iPhone 17 Pro Max', 139990)">Add to Cart</button>
+          <button onclick="buyNow('iPhone 17 Pro Max', 139990)">Buy Now</button>
+        </div>
+
+        <div class="mini-info">
+          <p>🚚 Antalya içi hızlı teslimat</p>
+          <p>🏬 Mağazadan teslim imkanı</p>
+          <p>🛡️ Garanti ve servis desteği</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="spec-section">
+      <h2>Teknik Özellikler</h2>
+
+      <div class="spec-grid">
+        <div><b>Ekran:</b> 6.9 inç Super Retina XDR OLED</div>
+        <div><b>Çözünürlük:</b> 2868 × 1320 piksel</div>
+        <div><b>Yenileme Hızı:</b> 120 Hz</div>
+        <div><b>İşlemci:</b> Apple A19 Pro</div>
+        <div><b>RAM:</b> 12 GB LPDDR5</div>
+        <div><b>Depolama:</b> 256 GB / 512 GB / 1 TB / 2 TB</div>
+        <div><b>Kamera:</b> 48 MP üçlü kamera sistemi</div>
+        <div><b>Ön Kamera:</b> 18 MP</div>
+        <div><b>Bağlantı:</b> 5G, Wi-Fi 7, Bluetooth 6.0, NFC</div>
+        <div><b>Şarj:</b> USB-C, MagSafe, Qi2</div>
+        <div><b>Koruma:</b> IP68, Ceramic Shield 2</div>
+        <div><b>İşletim Sistemi:</b> iOS 26</div>
+      </div>
+    </section>
+
+  </main>
+
+  <div class="cart-panel" id="cartPanel">
+    <div class="cart-header">
+      <h2>Sepetim</h2>
+      <button onclick="toggleCart()">×</button>
+    </div>
+    <div id="cartItems"></div>
+    <div class="cart-total">
+      <h3>Toplam: ₺<span id="totalPrice">0</span></h3>
+    </div>
+    <button class="checkout" onclick="checkout()">Ödemeye Geç</button>
+    <button class="close" onclick="toggleCart()">Kapat</button>
+  </div>
+
+  <a class="whatsapp" href="https://wa.me/905514753938" target="_blank">WhatsApp</a>
+
+  <footer>
+    <div class="footer-bottom">© 2026 GadMarket Antalya. Tüm hakları saklıdır.</div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

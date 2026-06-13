@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GadMarket Antalya | Gadget Mağazası</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="top-bar">
+    <div>📞 +90 551 475 39 38</div>
+    <div>Antalya gadget mağazası | Telefon, saat ve elektronik ürünler</div>
+    <div>📍 Antalya, Türkiye</div>
+  </div>
+
+  <header class="main-header">
+    <a href="index.html" class="logo">
+      <div class="logo-icon">🛍️</div>
+      <span>GadMarket</span>
+    </a>
+
+    <div class="search-area">
+      <input type="text" id="searchInput" placeholder="Ürün ara..." onkeyup="searchProducts()" />
+      <button onclick="searchProducts()">🔍 Search</button>
+    </div>
+
+    <div class="header-icons">
+  <button title="Favoriler">♡</button>
+  <button onclick="toggleCart()" title="Sepet">🛒 <span id="cart-count">0</span></button>
+  <button title="Hesap">👤</button>
+  <button class="menu-toggle" onclick="toggleMobileMenu()">☰</button>
+    </div>
+  </header>
+
+  <nav class="nav-menu">
+    <button class="category-btn">☰ All Category</button>
+    <a href="index.html">Home</a>
+    <a href="index.html#about">About</a>
+    <a href="index.html#products">Shop</a>
+    <a href="payment.html">Ödeme</a>
+    <a href="delivery.html">Teslimat</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu-header">
+    <h2>GadMarket</h2>
+    <button onclick="toggleMobileMenu()">×</button>
+  </div>
+
+  <a href="index.html">Home</a>
+  <a href="index.html#products">Shop</a>
+  <a href="product.html">iPhone 17 Pro Max</a>
+  <a href="payment.html">Ödeme</a>
+  <a href="delivery.html">Teslimat</a>
+  <a href="pickup.html">Mağazadan Teslim</a>
+  <a href="service.html">Servis Merkezi</a>
+  <a href="expertise.html">Ekspertiz</a>
+  <a href="warranty.html">Garanti</a>
+  <a href="contact.html">İletişim</a>
+  <a href="privacy.html">Gizlilik Politikası</a>
+  <a href="agreement.html">Kullanıcı Sözleşmesi</a>
+</div>
+
+<div class="overlay" id="overlay" onclick="toggleMobileMenu()"></div>
+
+  <main class="container">
+
+    <section class="hero">
+      <div class="hero-big">
+        <div>
+          <span class="hero-label">Yeni Sezon Fırsatları</span>
+          <h1>GadMarket Antalya</h1>
+          <p>iPhone, Apple Watch, telefon aksesuarları ve modern gadget ürünlerinde özel fırsatlar.</p>
+          <a href="#products" class="hero-btn">Şimdi Alışverişe Başla</a>
+        </div>
+      </div>
+
+      <div class="hero-side">
+        <div class="side-banner black">
+          <h3>APPLE ÜRÜNLERİ</h3>
+          <p>Yeni nesil iPhone ve Apple Watch modelleri</p>
+        </div>
+
+        <div class="side-banner purple">
+          <h3>ANTALYA TESLİMAT</h3>
+          <p>Hızlı teslimat ve mağazadan teslim imkanı</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="category-section">
+      <div class="category-card" onclick="filterCategory('iphone')">📱<span>Smartphone</span></div>
+      <div class="category-card" onclick="filterCategory('watch')">⌚<span>Smart Watch</span></div>
+      <div class="category-card" onclick="filterCategory('aksesuar')">🔌<span>Aksesuar</span></div>
+      <div class="category-card" onclick="filterCategory('headphone')">🎧<span>Headphone</span></div>
+      <div class="category-card" onclick="filterCategory('gaming')">🎮<span>Gaming</span></div>
+      <div class="category-card" onclick="showAllProducts()">➕<span>More</span></div>
+    </section>
+
+    <section id="products" class="products-section">
+      <div class="section-title">
+        <h2>Flash Sale Deals</h2>
+        <span id="timer">05 : 02 : 00</span>
+      </div>
+
+      <div class="products-grid" id="productList">
+
+        <div class="product-card" data-name="iphone 17 pro max apple telefon smartphone">
+          <div class="discount">Yeni</div>
+          <button class="fav-btn">♡</button>
+          <a href="product.html">
+            <img src="images/iphone17.png" alt="iPhone 17 Pro Max">
+          </a>
+          <h3>iPhone 17 Pro Max</h3>
+          <p>6.9 inç Super Retina XDR OLED, A19 Pro, 48 MP üçlü kamera, iOS 26.</p>
+
+          <div class="details">
+            <span>256 GB</span>
+            <span>120 Hz</span>
+            <span>5G</span>
+          </div>
+
+          <div class="price-row">
+            <strong>₺139.990</strong>
+            <del>₺149.990</del>
+          </div>
+
+          <div class="card-actions">
+            <button onclick="addToCart('iPhone 17 Pro Max', 139990)">Add to Cart</button>
+            <button class="buy-btn" onclick="buyNow('iPhone 17 Pro Max', 139990)">Buy Now</button>
+          </div>
+        </div>
+
+        <div class="product-card" data-name="apple watch series 11 akıllı saat smartwatch watch">
+          <div class="discount">Yeni</div>
+          <button class="fav-btn">♡</button>
+          <img src="images/watch11.png" alt="Apple Watch Series 11">
+          <h3>Apple Watch Series 11</h3>
+          <p>LTPO OLED ekran, S10 işlemci, 64 GB hafıza, sağlık ve spor özellikleri.</p>
+
+          <div class="details">
+            <span>64 GB</span>
+            <span>OLED</span>
+            <span>IP6X</span>
+          </div>
+
+          <div class="price-row">
+            <strong>₺24.990</strong>
+            <del>₺27.990</del>
+          </div>
+
+          <div class="card-actions">
+            <button onclick="addToCart('Apple Watch Series 11', 24990)">Add to Cart</button>
+            <button class="buy-btn" onclick="buyNow('Apple Watch Series 11', 24990)">Buy Now</button>
+          </div>
+        </div>
+
+        <div class="product-card" data-name="apple watch ultra 3 akıllı saat smartwatch titanium watch">
+          <div class="discount">Ultra</div>
+          <button class="fav-btn">♡</button>
+          <img src="images/watch11.png" alt="Apple Watch Ultra 3">
+          <h3>Apple Watch Ultra 3</h3>
+          <p>Titanium gövde, 49 mm ekran, uzun pil ömrü ve outdoor kullanım için ideal.</p>
+
+          <div class="details">
+            <span>49 mm</span>
+            <span>Titanium</span>
+            <span>WR100</span>
+          </div>
+
+          <div class="price-row">
+            <strong>₺49.990</strong>
+            <del>₺54.990</del>
+          </div>
+
+          <div class="card-actions">
+            <button onclick="addToCart('Apple Watch Ultra 3', 49990)">Add to Cart</button>
+            <button class="buy-btn" onclick="buyNow('Apple Watch Ultra 3', 49990)">Buy Now</button>
+          </div>
+        </div>
+
+        <div class="product-card" data-name="iphone aksesuar seti şarj kablo kılıf aksesuar smartphone">
+          <div class="discount">Set</div>
+          <button class="fav-btn">♡</button>
+          <img src="https://images.unsplash.com/photo-1601784551446-20c9e07cdbdb?auto=format&fit=crop&w=600&q=80" alt="iPhone Aksesuar Seti">
+          <h3>iPhone Aksesuar Seti</h3>
+          <p>Kılıf, hızlı şarj kablosu ve adaptör içeren kullanışlı aksesuar seti.</p>
+
+          <div class="details">
+            <span>Kılıf</span>
+            <span>Kablo</span>
+            <span>Adaptör</span>
+          </div>
+
+          <div class="price-row">
+            <strong>₺1.499</strong>
+            <del>₺1.999</del>
+          </div>
+
+          <div class="card-actions">
+            <button onclick="addToCart('iPhone Aksesuar Seti', 1499)">Add to Cart</button>
+            <button class="buy-btn" onclick="buyNow('iPhone Aksesuar Seti', 1499)">Buy Now</button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="best-section">
+      <div class="section-title">
+        <h2>Best Seller by Category</h2>
+        <a href="#products">View All ›</a>
+      </div>
+
+      <div class="promo-grid">
+        <div class="promo-card">
+          <h3>📱 iPhone Modelleri</h3>
+          <p>Yeni nesil Apple telefonlar ve aksesuarlar.</p>
+          <button onclick="filterCategory('iphone')">Shop Now</button>
+        </div>
+
+        <div class="promo-card">
+          <h3>⌚ Akıllı Saatler</h3>
+          <p>Apple Watch ve modern akıllı saat seçenekleri.</p>
+          <button onclick="filterCategory('watch')">Shop Now</button>
+        </div>
+
+        <div class="promo-card dark">
+          <h3>Make Your Life Easier & Stylish</h3>
+          <p>Gadget ürünleriyle günlük hayatını daha pratik hale getir.</p>
+          <button onclick="showAllProducts()">Buy Now</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="services">
+      <h2>Hizmetlerimiz</h2>
+
+      <div class="services-grid">
+        <a href="payment.html"><h3>💳 Ödeme</h3><p>Kart, havale ve kapıda ödeme seçenekleri.</p></a>
+        <a href="delivery.html"><h3>🚚 Teslimat</h3><p>Antalya içi hızlı teslimat imkanı.</p></a>
+        <a href="pickup.html"><h3>🏬 Mağazadan Teslim</h3><p>Ürünü mağazadan teslim alma seçeneği.</p></a>
+        <a href="service.html"><h3>🔧 Servis Merkezi</h3><p>Teknik destek ve ürün kontrol hizmetleri.</p></a>
+        <a href="expertise.html"><h3>📋 Ekspertiz</h3><p>İkinci el cihaz kontrolü ve değerlendirme.</p></a>
+        <a href="warranty.html"><h3>🛡️ Garanti</h3><p>Ürünlerde garanti ve satış sonrası destek.</p></a>
+        <a href="contact.html"><h3>📞 Kontaklar</h3><p>Bize telefon, e-posta veya WhatsApp üzerinden ulaşabilirsiniz.</p></a>
+        <a href="privacy.html"><h3>🔐 Gizlilik Politikası</h3><p>Müşteri bilgilerinin güvenliği bizim için önemlidir.</p></a>
+        <a href="agreement.html"><h3>📄 Kullanıcı Sözleşmesi</h3><p>Alışveriş ve kullanım şartları hakkında bilgiler.</p></a>
+      </div>
+    </section>
+
+    <section id="about" class="about">
+      <h2>Hakkımızda</h2>
+      <p>
+        GadMarket Antalya, akıllı telefonlar, Apple Watch modelleri, telefon aksesuarları
+        ve modern gadget ürünleri sunan bir teknoloji mağazasıdır. Amacımız müşterilerimize
+        kaliteli ürünleri uygun fiyatlarla sunmak, güvenli alışveriş deneyimi sağlamak ve
+        satış sonrası destek vermektir.
+      </p>
+    </section>
+
+  </main>
+
+  <div class="cart-panel" id="cartPanel">
+    <div class="cart-header">
+      <h2>Sepetim</h2>
+      <button onclick="toggleCart()">×</button>
+    </div>
+
+    <div id="cartItems"></div>
+
+    <div class="cart-total">
+      <h3>Toplam: ₺<span id="totalPrice">0</span></h3>
+    </div>
+
+    <button class="checkout" onclick="checkout()">Ödemeye Geç</button>
+    <button class="close" onclick="toggleCart()">Kapat</button>
+  </div>
+
+  <a class="whatsapp" href="https://wa.me/905514753938" target="_blank">WhatsApp</a>
+
+  <footer>
+    <div class="footer-content">
+      <div>
+        <h3>GadMarket</h3>
+        <p>Antalya gadget ve elektronik mağazası.</p>
+      </div>
+
+      <div>
+        <h4>Menü</h4>
+        <a href="index.html">Home</a>
+        <a href="index.html#products">Shop</a>
+        <a href="payment.html">Ödeme</a>
+        <a href="delivery.html">Teslimat</a>
+        <a href="contact.html">Contact</a>
+      </div>
+
+      <div>
+        <h4>İletişim</h4>
+        <p>+90 551 475 39 38</p>
+        <p>umatnuriev@gmail.com</p>
+        <p>Antalya, Türkiye</p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      © 2026 GadMarket Antalya. Tüm hakları saklıdır.
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
